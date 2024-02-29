@@ -68,3 +68,27 @@ let role = "dev";
 ```
 
 doing this is not displaying the changing values. To show changes with variables we use state
+
+```javascript
+const [role, setRole] = useState("dev");
+return (
+  <div className="App">
+    {showEmployees ? (
+      <>
+        <input
+          type="text"
+          onChange={(e) => {
+            console.log(e.target.value);
+            setRole(e.target.value);
+          }}
+        />
+        <Employee name="John" role="intern" />
+        <Employee name="Jabe" role={role} />
+        <Employee name="Kile" />
+      </>
+    ) : (
+      <p>You can not see Employees</p>
+    )}
+  </div>
+);
+```
