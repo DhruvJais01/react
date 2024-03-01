@@ -92,3 +92,5 @@ return (
   </div>
 );
 ```
+
+# installing tailwind
