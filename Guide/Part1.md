@@ -94,3 +94,46 @@ return (
 ```
 
 # installing tailwind
+
+https://tailwindcss.com/docs/installation
+
+# added cardbox for employees
+
+# Creating an array to provide data for employee
+
+- react keep track of each element so it needs id, we can provide in manually but there is bettter way to create id
+
+```bash
+npm install uuid
+```
+
+```javascript
+import { v4 as uuidV4 } from "uuid";
+
+//before return
+const [employess, setEmployees] = useState([
+  {
+    name: "Caleb",
+    role: "Developer",
+    img: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg",
+  },
+  {
+    name: "Sal",
+    role: "UI designer",
+    img: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg ",
+  },
+]);
+// inside return
+<div className="flex flex-wrap justify-center">
+  {employess.map((employee) => {
+    return (
+      <Employee
+        id={uuidV4()}
+        name={employee.name}
+        role={employee.role}
+        img={employee.img}
+      />
+    );
+  })}
+</div>;
+```
